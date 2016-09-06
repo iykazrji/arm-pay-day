@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 
 #=======================================
 # Service Namespace  
+use App\Http\Services\GoalsManagemen;
 use App\Http\Services\IdentityManagement;
 
 
@@ -29,6 +30,7 @@ class Controller extends BaseController
     function __construct()
     {
     	$this->userValidation 		= new UserValidation;
+    	$this->goalsManagemen 		= new GoalsManagemen;
     	$this->identityManagement 	= new IdentityManagement;
     }
 }
