@@ -27,7 +27,7 @@ class GoalController extends Controller
 
 	public function postUpdateGoal(Request $request)
 	{
-		$validator = $this->goalsManagementValidation->createGoalValidation($request->all());
+		$validator = $this->goalsManagementValidation->updateGoalValidation($request->all());
  
 		if ($validator->fails())
 		{
@@ -41,4 +41,23 @@ class GoalController extends Controller
 			return $this->goalsManagement->updateGoal($request->all());
 		}
 	}
+	
+	public function postDeleteGoal(Request $request)
+	{
+
+		$validator = $this->goalsManagementValidation->deleteGoalValidation($request->all());
+ 
+		if ($validator->fails())
+		{
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
+		}
+		else 
+		{
+			return $this->goalsManagement->updateGoal($request->all());
+		}
+	}
+
 }

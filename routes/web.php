@@ -51,5 +51,10 @@ Route::post('goal/update', [
 	'as' 	=> 'goal.update'
 ]);
 
+Route::post('goal/delete', [
+	'uses' 	=> 'GoalController@postDeleteGoal',
+	'as' 	=> 'goal.delete'
+]);
+
 
 

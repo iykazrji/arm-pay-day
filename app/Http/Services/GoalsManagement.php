@@ -60,4 +60,29 @@ class GoalsManagement
 		    return $responseBody = $exception->getResponse()->getBody(true);
 		}
 	}
+
+	public function deleteGoal()
+	{
+		$data = json_encode(json_encode($data));
+
+		$http = new Client([
+	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Goal/Create',
+	       'headers' => [
+	           'Content-Type'  => 'application/json'
+	       	]
+		]);
+
+		try 
+		{
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Goal/Delete', [
+			   'body' => $data
+			]);
+
+			return $request->getBody();
+		} 
+		catch (ClientException $exception) 
+		{
+		    return $responseBody = $exception->getResponse()->getBody(true);
+		}	
+	}
 } 
