@@ -3,10 +3,11 @@
 namespace App\Http\Services;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
 
 class IdentityManagement
 {
-
 
 	public function registerUserService($data)
 	{
@@ -14,25 +15,49 @@ class IdentityManagement
 		$data = json_encode(json_encode($data));
 
 		$http = new Client([
-		       'base_uri' => 'https://api.arm.com.ng/Pdiv/Account/',
-		       'headers' => [
-		           'Content-Type'  => 'application/json'
-		       	]
+	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Account/',
+	       'headers' => [
+	           'Content-Type'  => 'application/json'
+	       	]
 		]);
 
-		$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/Register', [
-		   'body' => $data
-		]);
-
-		$statusCode = $request->getStatusCode();
-
-		if($statusCode == 200)
+		try 
 		{
-			return true;
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/Register', [
+			   'body' => $data
+			]);
+
+			return $request->getBody();
+		} 
+		catch (ClientException $exception) 
+		{
+		    return $responseBody = $exception->getResponse()->getBody(true);
 		}
-		else
+	}
+
+	public function loginUserService($data)
+	{
+		$data = json_encode(json_encode($data));
+
+		$http = new Client([
+	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Account/',
+	       'headers' => [
+	           'Content-Type'  => 'application/json'
+	       	]
+		]);
+		
+		try 
 		{
-			return false;
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/Login', [
+			   'body' => $data
+			]);
+			
+			return $request->getBody();
+
+		} 
+		catch (ClientException $exception) 
+		{
+		    return $responseBody = $exception->getResponse()->getBody(true);
 		}
 	}
 }

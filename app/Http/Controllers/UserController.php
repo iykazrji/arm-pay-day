@@ -22,17 +22,7 @@ class UserController extends Controller
 		}
 		else 
 		{
-			$create_user  = $this->identityManagement->registerUserService($request->all());
-			
-			if ($create_user) 
-			{
-				$response = "the registration was ok";
-			}
-			else
-			{
-				$response = "something went wrong from api";
-			}
-
+			return $this->identityManagement->registerUserService($request->all());
 		}
 
 		return $response;
@@ -40,6 +30,19 @@ class UserController extends Controller
 
 	public function postLoginUser(Request $request)
 	{
-		return 1;
+
+		$validator = $this->userValidation->loginUserValidation($request->all());
+
+		if ($validator->fails())
+		{
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
+		}
+		else 
+		{
+			return $this->identityManagement->loginUserService($request->all());		
+		}
 	}
 }

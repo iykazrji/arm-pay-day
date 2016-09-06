@@ -30,8 +30,8 @@ class UserValidation
 	public function loginUserValidation($data)
 	{	
 		$validator = Validator::make($data, [
-			'Username' 	=> 'required|max:50|min:4|alpha_num',
-			'Password' 	=> 'required|alpha_num|min:50',
+			'Username' 	=> 'required|max:50|min:4|string',
+			'Password' 	=> 'required|alpha_num|max:50',
 		]);
 
 		return $validator;
