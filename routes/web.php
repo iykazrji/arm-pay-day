@@ -46,5 +46,10 @@ Route::post('goal/create', [
 	'as' 	=> 'goal.update'
 ]);
 
+Route::post('goal/update', [
+	'uses' 	=> 'GoalController@postUpdateGoal',
+	'as' 	=> 'goal.update'
+]);
+
 
 

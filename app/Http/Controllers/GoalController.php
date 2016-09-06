@@ -24,4 +24,21 @@ class GoalController extends Controller
 			return $this->goalsManagement->createGoal($request->all());
 		}
 	}
+
+	public function postUpdateGoal(Request $request)
+	{
+		$validator = $this->goalsManagementValidation->createGoalValidation($request->all());
+ 
+		if ($validator->fails())
+		{
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
+		}
+		else 
+		{
+			return $this->goalsManagement->updateGoal($request->all());
+		}
+	}
 }
