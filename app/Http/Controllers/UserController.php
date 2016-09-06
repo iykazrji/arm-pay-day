@@ -45,4 +45,11 @@ class UserController extends Controller
 			return $this->identityManagement->loginUserService($request->all());		
 		}
 	}
+
+	public function getUser()
+	{
+		// dd(json_decode($_COOKIE['__R_TOKEN']));
+		$user = ['UserId' => 'PIV100011'];
+		return $this->identityManagement->getUserDetail($user);		
+	}
 }

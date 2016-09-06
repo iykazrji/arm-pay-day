@@ -67,4 +67,31 @@ class IdentityManagement
 		    return $getResponseeBody = $exception->getResponse()->getBody(true);
 		}
 	}
+
+	public function getUserDetail($data)
+	{
+		$data = json_encode(json_encode($data));
+
+		$http = new Client([
+	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Account/',
+	       'headers' => [
+	           'Content-Type'  => 'application/json'
+	       	]
+		]);
+		
+		try 
+		{
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/FetchUser', [
+			   'body' => $data
+			]);
+			
+			return $request->getBody();
+		} 
+		catch (ClientException $exception) 
+		{
+		    return $getResponseeBody = $exception->getResponse()->getBody(true);
+		}
+	}
+
+
 }
