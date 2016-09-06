@@ -52,4 +52,22 @@ class UserController extends Controller
 		$user = ['UserId' => 'PIV100011'];
 		return $this->identityManagement->getUserDetail($user);		
 	}
+
+	public function postUpdateUser(Request $request)
+	{
+		
+		$validator = $this->userValidation->updateUserValidation($request->all());
+
+		if ($validator->fails())
+		{
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
+		}
+		else 
+		{
+			return $this->identityManagement->updateUser($request->all());		
+		}
+	}
 }

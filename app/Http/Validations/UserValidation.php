@@ -36,4 +36,23 @@ class UserValidation
 
 		return $validator;
 	}
+
+	public function updateUserValidation($data)
+	{	
+		$validator = Validator::make($data, [
+			'BVN' 				=> 'required|max:50|min:4|alpha_num',
+			'Email' 			=> 'required|email',
+			'UserId' 			=> 'required|string',
+			'Status' 			=> 'required|max:50|min:4|alpha_num',
+			'Address' 			=> 'required|alpha_num',
+			'Surname' 			=> 'required|max:50|min:4|alpha_num',
+			'BankName' 			=> 'required|max:50|min:4|alpha_num',
+			'Middlename' 		=> 'required|max:50|min:4|alpha_num',
+			'Phonenumber' 		=> 'required|min:11|integer',
+			'BankAccountNo' 	=> 'required|max:50|min:4|alpha_num',
+			'RegistrationDate' 	=> 'required|min:11|date',
+		]);
+
+		return $validator;
+	}
 }

@@ -29,3 +29,8 @@ Route::get('user', [
 	'uses' 	=> 'UserController@getUser',
 	'as' 	=> 'login'
 ]);
+
+Route::post('user/update', [
+	'uses' 	=> 'UserController@postUpdateUser',
+	'as' 	=> 'user.update'
+]);
