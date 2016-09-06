@@ -13,6 +13,7 @@ use App\Http\Services\IdentityManagement;
 #==========================================
 # Validations namespace
 use App\Http\Validations\UserValidation;
+use App\Http\Validations\GoalsManagementValidation;
 
 
 #============================================
@@ -32,7 +33,7 @@ class Controller extends BaseController
     	$this->userValidation 				= new UserValidation;
     	$this->goalsManagementValidation 	= new GoalsManagementValidation;
 
-    	$this->goalsManagemen 		= new GoalsManagemen;
+    	$this->goalsManagement 		= new GoalsManagement;
     	$this->identityManagement 	= new IdentityManagement;
     }
 }

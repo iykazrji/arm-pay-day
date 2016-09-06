@@ -42,7 +42,7 @@ Route::post('user/update', [
 
 
 Route::post('goal/create', [
-	'uses' 	=> 'GoalController@postUpdateUser',
+	'uses' 	=> 'GoalController@postCreateGoal',
 	'as' 	=> 'goal.update'
 ]);
 
