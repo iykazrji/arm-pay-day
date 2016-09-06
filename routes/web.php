@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('register', [
-	'uses' 	=> 'PagesController@searchPage',
+Route::post('register', [
+	'uses' 	=> 'RegisterController@createUserAccount',
 	'as' 	=> 'api.v1.register'
 ]);
