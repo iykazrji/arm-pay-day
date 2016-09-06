@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use Auth;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Guzzle\Http\Exception\ClientErrorResponseException;
@@ -51,13 +52,19 @@ class IdentityManagement
 			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/Login', [
 			   'body' => $data
 			]);
-			
-			return $request->getBody();
 
+			$time   =  time() + 3600;
+			$path   = '/';
+			$data   = json_encode($request->getBody());
+			$domain = env('host'); 
+
+			setcookie("__AUAT_TOKEN", $data, $time, $path, $domain);	
+
+			return $request->getBody();
 		} 
 		catch (ClientException $exception) 
 		{
-		    return $responseBody = $exception->getResponse()->getBody(true);
+		    return $getResponseeBody = $exception->getResponse()->getBody(true);
 		}
 	}
 }
