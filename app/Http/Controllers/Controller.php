@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 #=======================================
 # Service Namespace  
-use App\Http\Services\GoalsManagemen;
+use App\Http\Services\GoalsManagement;
 use App\Http\Services\IdentityManagement;
 
 
