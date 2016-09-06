@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 Route::post('register', [
-	'uses' 	=> 'UserController@createUserAccount',
+	'uses' 	=> 'UserController@postCreateUserAccount',
 	'as' 	=> 'api.v1.register'
 ]);
 
 Route::post('login', [
-	'uses' 	=> 'UserController@createUserAccount',
+	'uses' 	=> 'UserController@postLoginUser',
 	'as' 	=> 'api.v1.register'
 ]);

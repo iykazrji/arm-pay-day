@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-	public function createUserAccount(Request $request)
+	public function postCreateUserAccount(Request $request)
 	{
 
 		$validator = $this->userValidation->registerUserValidation($request->all());
@@ -38,5 +38,8 @@ class UserController extends Controller
 		return $response;
 	}
 
-
+	public function postLoginUser(Request $request)
+	{
+		
+	}
 }
