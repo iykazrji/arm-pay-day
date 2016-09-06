@@ -15,7 +15,7 @@ class GoalsManagement
 		$data = json_encode(json_encode($data));
 
 		$http = new Client([
-	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Account/',
+	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Goal/Create',
 	       'headers' => [
 	           'Content-Type'  => 'application/json'
 	       	]
@@ -23,7 +23,7 @@ class GoalsManagement
 
 		try 
 		{
-			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Account/Register', [
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/Goal/Create', [
 			   'body' => $data
 			]);
 
@@ -34,4 +34,4 @@ class GoalsManagement
 		    return $responseBody = $exception->getResponse()->getBody(true);
 		}
 	}
-}
+} 

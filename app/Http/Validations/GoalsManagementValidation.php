@@ -10,18 +10,16 @@ class GoalsManagementValidation
 	public function createGoalValidation($data)
 	{	
 		$validator = Validator::make($data, [
-			'BVN' 				=> 'required|max:50|min:4|alpha_num',
-			'Email' 			=> 'required|email',
-			'Status' 			=> 'required|max:50|min:4|alpha_num',
-			'Address' 			=> 'required|alpha_num',
-			'Surname' 			=> 'required|max:50|min:4|alpha_num',
-			'Password' 			=> 'required|max:50|min:4',
-			'BankName' 			=> 'required|max:50|min:4|alpha_num',
-			'Middlename' 		=> 'required|max:50|min:4|alpha_num',
-			'Phonenumber' 		=> 'required|min:11|integer',
-			'BankAccountNo' 	=> 'required|max:50|min:4|alpha_num',
-			'SecurityAnswer' 	=> 'required|alpha_num',
-			'SecurityQuestion' 	=> 'required|max:50|min:4|alpha_num',
+			'Status' 			=> 'alpha_num',
+			'GoalId' 			=> 'max:50|min:4|alpha_num',
+			'ItemName' 			=> 'required|max:50|min:4|alpha_num',
+			'ItemType' 			=> 'required|alpha_num|max:50',
+			'ItemClass' 		=> 'required|alpha_num|max:50',
+			'AppUserId' 		=> 'required|max:50|min:4|alpha_num',
+			'GoalAmount' 		=> 'required|integer',
+			'DateCreated' 		=> 'required|date',
+			'PrefferedVendor' 	=> 'required|alpha_num|max:50',
+			'ItemDescription' 	=> 'required|alpha_num',
 		]);
 
 		return $validator;
