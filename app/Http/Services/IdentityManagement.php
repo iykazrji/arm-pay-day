@@ -34,6 +34,5 @@ class IdentityManagement
 		{
 				return false;
 		}
-		
 	}
 }

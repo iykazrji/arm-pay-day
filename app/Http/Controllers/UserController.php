@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class UserController extends Controller
 {
 
 	public function createUserAccount(Request $request)
@@ -37,4 +37,6 @@ class RegisterController extends Controller
 
 		return $response;
 	}
+
+
 }
