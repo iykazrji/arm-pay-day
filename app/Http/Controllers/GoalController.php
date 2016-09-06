@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 class GoalController extends Controller
 {
+
+
 	public function postCreateGoal(Request $request)
 	{
 		$validator = $this->goalsManagementValidation->createGoalValidation($request->all());
@@ -63,6 +65,11 @@ class GoalController extends Controller
 	public function getAllGoals(Request $request)
 	{
 		return $this->goalsManagement->updateGoal($request->all());
+	}
+	
+	public function getGoal(Request $request)
+	{
+		return $this->goalsManagement->getGoal($request->all());
 	}
 
 }
