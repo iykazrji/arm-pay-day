@@ -40,6 +40,11 @@ Route::post('user/update', [
 	'as' 	=> 'user.update'
 ]);
 
+Route::post('user/goals', [
+	'uses' 	=> 'GoalController@getAllGoals',
+	'as' 	=> 'user.update'
+]);
+
 
 Route::post('goal/create', [
 	'uses' 	=> 'GoalController@postCreateGoal',

@@ -60,4 +60,9 @@ class GoalController extends Controller
 		}
 	}
 
+	public function getAllGoals(Request $request)
+	{
+		return $this->goalsManagement->updateGoal($request->all());
+	}
+
 }
