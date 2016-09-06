@@ -29,7 +29,9 @@ class Controller extends BaseController
 
     function __construct()
     {
-    	$this->userValidation 		= new UserValidation;
+    	$this->userValidation 				= new UserValidation;
+    	$this->goalsManagementValidation 	= new GoalsManagementValidation;
+
     	$this->goalsManagemen 		= new GoalsManagemen;
     	$this->identityManagement 	= new IdentityManagement;
     }
