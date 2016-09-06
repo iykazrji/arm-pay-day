@@ -40,6 +40,6 @@ class UserController extends Controller
 
 	public function postLoginUser(Request $request)
 	{
-		
+		return 1;
 	}
 }

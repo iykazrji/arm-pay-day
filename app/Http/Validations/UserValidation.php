@@ -26,4 +26,14 @@ class UserValidation
 
 		return $validator;
 	}
+
+	public function loginUserValidation($data)
+	{	
+		$validator = Validator::make($data, [
+			'Username' 	=> 'required|max:50|min:4|alpha_num',
+			'Password' 	=> 'required|alpha_num|min:50',
+		]);
+
+		return $validator;
+	}
 }

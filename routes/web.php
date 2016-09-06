@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 Route::post('register', [
 	'uses' 	=> 'UserController@postCreateUserAccount',
-	'as' 	=> 'api.v1.register'
+	'as' 	=> 'register'
 ]);
 
 Route::post('login', [
 	'uses' 	=> 'UserController@postLoginUser',
-	'as' 	=> 'api.v1.register'
+	'as' 	=> 'login'
 ]);
