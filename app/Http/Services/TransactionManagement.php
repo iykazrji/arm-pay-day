@@ -44,7 +44,7 @@ class TransactionManagement
 
 		try 
 		{
-			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/Create', [
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/CurrentBalance', [
 			   'headers' => [
 			      'Accept'  		=> 'application/json',
 			      'Content-Type'  	=> 'application/json',
