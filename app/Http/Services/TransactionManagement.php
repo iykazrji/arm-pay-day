@@ -19,6 +19,11 @@ class TransactionManagement
 		try 
 		{
 			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/PaymentDetails/Create', [
+			   'headers' => [
+			      'Accept'  		=> 'application/json',
+			      'Content-Type'  	=> 'application/json',
+			   	],
+			   'auth' => ['arm', '@rm1k0y1l@g0s'],
 			   'body' => $data
 			]);
 
