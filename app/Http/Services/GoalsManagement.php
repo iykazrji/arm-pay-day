@@ -89,9 +89,9 @@ class GoalsManagement
 		}
 	}
 
-	public function deleteGoal()
+	public function deleteGoal($data)
 	{
-		$data = json_encode(json_encode($data));
+		return $data = json_encode($data);
 
 		$http = new Client();
 		try 

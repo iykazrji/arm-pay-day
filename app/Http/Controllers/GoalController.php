@@ -58,7 +58,7 @@ class GoalController extends Controller
 		}
 		else 
 		{
-			return $this->goalsManagement->updateGoal($request->all());
+			return $this->goalsManagement->deleteGoal($request['GoalId']);
 		}
 	}
 

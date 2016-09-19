@@ -66,8 +66,6 @@ Route::post('goal/{id}', [
 	'as' 	=> 'goal.update'
 ]);
 
-
-
 Route::post('payment/add_details', [
 	'uses' 	=> 'PaymentController@postAddPaymentDetails',
 	'as' 	=> 'goal.delete'
