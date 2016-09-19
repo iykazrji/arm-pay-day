@@ -50,6 +50,11 @@ Route::get('user/{id}/balance', [
 	'as' 	=> 'user.update'
 ]);
 
+Route::get('user/{id}/transaction/history', [
+	'uses' 	=> 'TransactionController@getTransactionHistory',
+	'as' 	=> 'user.update'
+]);
+
 Route::get('user/{id}/last_credit', [
 	'uses' 	=> 'TransactionController@getLastCredit',
 	'as' 	=> 'user.update'

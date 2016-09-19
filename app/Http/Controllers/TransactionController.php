@@ -61,4 +61,16 @@ class TransactionController extends Controller
 			return "you need the id the do the do";
 		}
 	}
+
+	public function getTransactionHistory($id)
+	{
+		if (isset($id) && $id != null ) 
+		{
+			return $this->transactionManagement->transactionHistory($id);
+		}
+		else
+		{
+			return "you need the id the do the do";
+		}
+	}
 }
