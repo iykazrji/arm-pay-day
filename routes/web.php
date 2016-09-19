@@ -80,5 +80,10 @@ Route::get('payment/{id}', [
 	'as' 	=> 'goal.delete'
 ]);
 
+Route::post('transaction/create', [
+	'uses' 	=> 'TransactionController@addTransaction',
+	'as' 	=> 'transaction.create'
+]);
+
 
 
