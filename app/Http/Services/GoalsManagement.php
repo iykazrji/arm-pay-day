@@ -12,7 +12,7 @@ class GoalsManagement
 	public function getGoal($data)
 	{
 
-		$data = json_encode(json_encode($data));
+		return $data = json_encode($data);
 
 		$http = new Client();
 

@@ -71,13 +71,19 @@ class GoalController extends Controller
 		else
 		{
 			return "you need the user id to get the goals";
-		}
-		
+		}	
 	}
 	
-	public function getGoal(Request $request)
+	public function getGoal($id)
 	{
-		return $this->goalsManagement->getGoal($request->all());
+		if (isset($id)  && $id != null) 
+		{
+			return $this->goalsManagement->getGoal($id);
+		}
+		else
+		{
+			return "you need the user id to get the goals";
+		}	
 	}
 
 }

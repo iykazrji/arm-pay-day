@@ -45,7 +45,6 @@ Route::get('user/goals', [
 	'as' 	=> 'user.update'
 ]);
 
-
 Route::post('goal/create', [
 	'uses' 	=> 'GoalController@postCreateGoal',
 	'as' 	=> 'goal.update'
@@ -61,9 +60,9 @@ Route::post('goal/delete', [
 	'as' 	=> 'goal.delete'
 ]);
 
-Route::post('goal/{id}', [
+Route::get('goal/{id}', [
 	'uses' 	=> 'GoalController@getGoal',
-	'as' 	=> 'goal.update'
+	'as' 	=> 'goal.{id}'
 ]);
 
 Route::post('payment/add_details', [
