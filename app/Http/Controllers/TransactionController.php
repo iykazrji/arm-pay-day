@@ -54,7 +54,7 @@ class TransactionController extends Controller
 	{
 		if (isset($id) && $id != null ) 
 		{
-			return $this->transactionManagement->lastCredit($id);
+			return $this->transactionManagement->lastRedemption($id);
 		}
 		else
 		{
@@ -62,15 +62,20 @@ class TransactionController extends Controller
 		}
 	}
 
-	public function getTransactionHistory($id)
+	public function getTransactionHistory(Request $request)
 	{
-		if (isset($id) && $id != null ) 
+		$validator = $this->transactionValidation->getTransactionHistoryValidation($request->all());
+		
+		if ($validator->fails())
 		{
-			return $this->transactionManagement->transactionHistory($id);
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
 		}
-		else
+		else 
 		{
-			return "you need the id the do the do";
+			return $this->transactionManagement->transactionHistory($request->all());
 		}
 	}
 }

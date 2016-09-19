@@ -36,4 +36,17 @@ class TransactionValidation
 
 		return $validator;
 	}
+
+	public function getTransactionHistoryValidation($data)
+	{	
+		$validator = Validator::make($data, [
+			'AppUserId' 			=> 'required|max:50|min:4|alpha_num',
+			'FromDate' 				=> 'required|date',
+			'ToDate' 				=> 'required|date',
+		]);
+
+		return $validator;
+	}
+
+
 }

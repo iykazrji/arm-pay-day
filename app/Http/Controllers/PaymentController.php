@@ -38,7 +38,7 @@ class PaymentController extends Controller
 		}
 		else 
 		{
-			return $this->payment->addPaymentDetails($request->all());
+			return $this->payment->updatePayment($request->all());
 		}
 			
 	}

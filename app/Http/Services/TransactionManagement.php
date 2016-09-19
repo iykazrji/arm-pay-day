@@ -12,7 +12,7 @@ class TransactionManagement
 	public function addPaymentDetails($data)
 	{
 
-		return $data = json_encode(json_encode($data));
+		$data = json_encode(json_encode($data));
 
 		$http = new Client();
 
@@ -38,7 +38,7 @@ class TransactionManagement
 	public function currentBalance($data)
 	{
 		
-		return $data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 
@@ -64,7 +64,7 @@ class TransactionManagement
 	public function lastCredit($data)
 	{
 		
-		return $data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 
@@ -90,13 +90,13 @@ class TransactionManagement
 	public function lastRedemption($data)
 	{
 		
-		return $data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 
 		try 
 		{
-			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/TransactionHistory', [
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/LastRedemption', [
 			   'headers' => [
 			      'Accept'  		=> 'application/json',
 			      'Content-Type'  	=> 'application/json',
@@ -116,13 +116,13 @@ class TransactionManagement
 	public function transactionHistory($data)
 	{
 		
-		return $data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 
 		try 
 		{
-			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/LastRedemption', [
+			$request = $http->request('POST', 'https://api.arm.com.ng/Pdiv/UserTransactions/TransactionHistory', [
 			   'headers' => [
 			      'Accept'  		=> 'application/json',
 			      'Content-Type'  	=> 'application/json',

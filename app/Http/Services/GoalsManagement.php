@@ -12,7 +12,7 @@ class GoalsManagement
 	public function getGoal($data)
 	{
 
-		return $data = json_encode($data);
+		$data = json_encode($data);
 
 		$http = new Client();
 
@@ -91,7 +91,7 @@ class GoalsManagement
 
 	public function deleteGoal($data)
 	{
-		return $data = json_encode($data);
+		$data = json_encode($data);
 
 		$http = new Client();
 		try 
@@ -117,19 +117,21 @@ class GoalsManagement
 
 	public function getAllGoals($data)
 	{
-		return $data = json_encode($data);
+		$data = json_encode($data);
 
-		$http = new Client([
-	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Goal/Create',
-	       'headers' => [
-	           'Content-Type'  => 'application/json'
-	       	]
-		]);
+		$http = new Client();
 
 		try 
 		{
 			$request = $http->request('POST', 'https://api.arm.com.ng/PaydayInvestot/Goal/Fetch_All_Goals', [
-			   'body' => $data
+			   
+			'headers' => [
+				'Accept'  		=> 'application/json',
+				'Content-Type'  	=> 'application/json',
+			],
+			
+			'auth' => ['arm', '@rm1k0y1l@g0s'],
+				'body' => $data
 			]);
 
 			return $request->getBody();
