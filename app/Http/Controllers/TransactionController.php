@@ -37,4 +37,16 @@ class TransactionController extends Controller
 			return "you need the id the do the do";
 		}
 	}
+
+	public function getLastCredit($id)
+	{
+		if (isset($id) && $id != null ) 
+		{
+			return $this->transactionManagement->lastCredit($id);
+		}
+		else
+		{
+			return "you need the id the do the do";
+		}
+	}
 }
