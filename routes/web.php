@@ -55,6 +55,11 @@ Route::get('user/{id}/last_credit', [
 	'as' 	=> 'user.update'
 ]);
 
+Route::get('user/{id}/redemption', [
+	'uses' 	=> 'TransactionController@getLastRedemption',
+	'as' 	=> 'user.update'
+]);
+
 Route::post('goal/create', [
 	'uses' 	=> 'GoalController@postCreateGoal',
 	'as' 	=> 'goal.update'
