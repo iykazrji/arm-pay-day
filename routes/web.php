@@ -70,6 +70,11 @@ Route::post('payment/add_details', [
 	'as' 	=> 'goal.delete'
 ]);
 
+Route::post('payment/update', [
+	'uses' 	=> 'PaymentController@updatePayment',
+	'as' 	=> 'goal.delete'
+]);
+
 Route::get('payment/{id}', [
 	'uses' 	=> 'PaymentController@getPaymentDetail',
 	'as' 	=> 'goal.delete'

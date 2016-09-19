@@ -23,6 +23,24 @@ class PaymentController extends Controller
 			return $this->payment->addPaymentDetails($request->all());
 		}
 			
+	}	
+
+	public function updatePayment(Request $request)
+	{
+		$validator = $this->paymentValidation->updatePaymentValidation($request->all());
+		
+		if ($validator->fails())
+		{
+		    return [
+		        "status"    =>"501",
+		        "message"   => $validator->errors()
+		    ];
+		}
+		else 
+		{
+			return $this->payment->addPaymentDetails($request->all());
+		}
+			
 	}
 
 	public function getPaymentDetail($id)
