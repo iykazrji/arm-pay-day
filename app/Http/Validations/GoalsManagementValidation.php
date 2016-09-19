@@ -28,10 +28,11 @@ class GoalsManagementValidation
 	public function updateGoalValidation($data)
 	{	
 		$validator = Validator::make($data, [
-			'Status' 			=> 'required|alpha_num',
-			'GoalId' 			=> 'required|max:50|min:4|alpha_num',
-			'ItemName' 			=> 'required|max:50|min:4|alpha_num',
-			'ItemType' 			=> 'required|alpha_num|max:50',
+			'Status' 		=> 'required|alpha_num',
+			'GoalId' 		=> 'required|max:50|min:4|alpha_num',
+			'ItemName' 		=> 'required|max:50|min:4|alpha_num',
+			'ItemType' 		=> 'required|alpha_num|max:50',
+			'ItemName' 		=> 'required|alpha_num|max:50',
 			'ItemClass' 		=> 'required|alpha_num|max:50',
 			'AppUserId' 		=> 'required|max:50|min:4|alpha_num',
 			'GoalAmount' 		=> 'required|integer',
@@ -46,6 +47,7 @@ class GoalsManagementValidation
 	public function deleteGoalValidation($data)
 	{	
 		$validator = Validator::make($data, [
+			
 			'GoalId' 	=> 'required|max:50|min:4|alpha_num',
 		]);
 

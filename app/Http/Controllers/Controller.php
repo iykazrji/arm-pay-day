@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 
 #=======================================
 # Service Namespace  
+use App\Http\Services\Payment;
 use App\Http\Services\GoalsManagement;
 use App\Http\Services\IdentityManagement;
 
@@ -13,6 +14,7 @@ use App\Http\Services\IdentityManagement;
 #==========================================
 # Validations namespace
 use App\Http\Validations\UserValidation;
+use App\Http\Validations\PaymentValidation;
 use App\Http\Validations\GoalsManagementValidation;
 
 
@@ -30,10 +32,12 @@ class Controller extends BaseController
 
     function __construct()
     {
-    	$this->userValidation 				= new UserValidation;
+    	$this->userValidation 			= new UserValidation;
+    	$this->paymentValidation 		= new PaymentValidation;
     	$this->goalsManagementValidation 	= new GoalsManagementValidation;
 
-    	$this->goalsManagement 		= new GoalsManagement;
+    	$this->payment 		= new Payment;
+    	$this->goalsManagement 	= new GoalsManagement;
     	$this->identityManagement 	= new IdentityManagement;
     }
 }

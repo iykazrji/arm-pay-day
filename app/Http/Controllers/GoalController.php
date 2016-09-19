@@ -30,7 +30,7 @@ class GoalController extends Controller
 	public function postUpdateGoal(Request $request)
 	{
 		$validator = $this->goalsManagementValidation->updateGoalValidation($request->all());
- 
+ 	
 		if ($validator->fails())
 		{
 		    return [

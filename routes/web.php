@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::post('register', [
@@ -51,11 +51,6 @@ Route::post('goal/create', [
 	'as' 	=> 'goal.update'
 ]);
 
-Route::post('goal/{id}', [
-	'uses' 	=> 'GoalController@getGoal',
-	'as' 	=> 'goal.update'
-]);
-
 Route::post('goal/update', [
 	'uses' 	=> 'GoalController@postUpdateGoal',
 	'as' 	=> 'goal.update'
@@ -63,6 +58,18 @@ Route::post('goal/update', [
 
 Route::post('goal/delete', [
 	'uses' 	=> 'GoalController@postDeleteGoal',
+	'as' 	=> 'goal.delete'
+]);
+
+Route::post('goal/{id}', [
+	'uses' 	=> 'GoalController@getGoal',
+	'as' 	=> 'goal.update'
+]);
+
+
+
+Route::post('payment/add_details', [
+	'uses' 	=> 'PaymentController@postAddPaymentDetails',
 	'as' 	=> 'goal.delete'
 ]);
 
