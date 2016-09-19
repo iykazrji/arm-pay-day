@@ -64,7 +64,15 @@ class GoalController extends Controller
 
 	public function getAllGoals(Request $request)
 	{
-		return $this->goalsManagement->updateGoal($request->all());
+		if ($request->has('UserId')) 
+		{
+			return $this->goalsManagement->getAllGoals($request['UserId']);
+		}
+		else
+		{
+			return "you need the user id to get the goals";
+		}
+		
 	}
 	
 	public function getGoal(Request $request)

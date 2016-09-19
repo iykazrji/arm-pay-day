@@ -115,9 +115,9 @@ class GoalsManagement
 		}	
 	}
 
-	public function getAllGoals()
+	public function getAllGoals($data)
 	{
-		$data = json_encode(json_encode($data));
+		return $data = json_encode($data);
 
 		$http = new Client([
 	       'base_uri' => 'https://api.arm.com.ng/Pdiv/Goal/Create',
