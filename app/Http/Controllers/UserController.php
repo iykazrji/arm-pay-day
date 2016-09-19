@@ -48,8 +48,7 @@ class UserController extends Controller
 
 	public function getUser()
 	{
-		// dd(json_decode($_COOKIE['__R_TOKEN']));
-		$user = ['UserId' => 'PIV100011'];
+		$user = "PIV10002";
 		return $this->identityManagement->getUserDetail($user);		
 	}
 
