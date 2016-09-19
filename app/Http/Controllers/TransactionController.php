@@ -21,7 +21,20 @@ class TransactionController extends Controller
 		}
 		else 
 		{
-			return $this->payment->addPaymentDetails($request->all());
+			return $this->transactionManagement->addPaymentDetails($request->all());
+		}
+	}
+
+
+	public function currentBalance($id)
+	{
+		if (isset($id) && $id != null ) 
+		{
+			return $this->transactionManagement->currentBalance($id);
+		}
+		else
+		{
+			return "you need the id the do the do";
 		}
 	}
 }

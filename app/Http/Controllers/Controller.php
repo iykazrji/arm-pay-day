@@ -42,6 +42,6 @@ class Controller extends BaseController
         $this->payment 		  = new Payment;
         $this->goalsManagement 	   = new GoalsManagement;
         $this->identityManagement         = new IdentityManagement;
-        $this->TransactionManagement   = new TransactionManagement;
+        $this->transactionManagement   = new TransactionManagement;
     }
 }

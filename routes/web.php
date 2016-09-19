@@ -45,6 +45,11 @@ Route::get('user/goals', [
 	'as' 	=> 'user.update'
 ]);
 
+Route::get('user/{id}/balance', [
+	'uses' 	=> 'TransactionController@currentBalance',
+	'as' 	=> 'user.update'
+]);
+
 Route::post('goal/create', [
 	'uses' 	=> 'GoalController@postCreateGoal',
 	'as' 	=> 'goal.update'
