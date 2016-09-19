@@ -83,7 +83,7 @@ class GoalController extends Controller
 		else
 		{
 			return "you need the user id to get the goals";
-		}	
-	}
+		}
+		}
 
 }

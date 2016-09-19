@@ -24,4 +24,16 @@ class PaymentController extends Controller
 		}
 			
 	}
+
+	public function getPaymentDetail($id)
+	{
+		if (isset($id) && $id != null ) 
+		{
+			return $this->payment->getPaymentDetail($id);
+		}
+		else
+		{
+			return 'you need user id to get the payment details';
+		}
+	}
 }
