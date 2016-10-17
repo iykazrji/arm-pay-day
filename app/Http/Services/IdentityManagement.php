@@ -55,10 +55,10 @@ class IdentityManagement
 
 			$time   =  time() + 3600;
 			$path   = '/';
-			$data   = json_encode($request->getBody());
+			$data  	= $request->getBody();
 			$domain = env('host'); 
 
-			setcookie("__AUAT_TOKEN", $data, $time, $path, $domain);	
+			setcookie("__ARM_UA", $data, $time, $path, $domain);	
 			
 			return $request->getBody();
 		} 

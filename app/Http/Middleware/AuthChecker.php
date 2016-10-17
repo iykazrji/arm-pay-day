@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
 class AuthChecker
 {
@@ -18,7 +17,8 @@ class AuthChecker
     public function handle($request, Closure $next, $guard = null)
     {
         $pass_routes_with_out_auth = [
-            "login"
+            "login",
+            "register"
         ];
 
         /*======================================================================
@@ -31,14 +31,15 @@ class AuthChecker
                 return $next($request);
             }
         }
-
-        if (Auth::check()) 
+        
+        if (isset($_COOKIE['__ARM_UA'])) 
         {
-            if (Auth::user()->profile_status == 0) 
-            {
-                return redirect()->to('dashboard/user');
-            }
+            return $next($request);
         }
-        return $next($request);
+        else
+        {
+        	return redirect()->to('login');
+        }
+
     }
 }

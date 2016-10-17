@@ -30,6 +30,11 @@ Route::post('login', [
 	'as' 	=> 'login'
 ]);
 
+Route::get('login', [
+	'uses' 	=> 'UserController@postLoginUser',
+	'as' 	=> 'login'
+]);
+
 Route::get('user', [
 	'uses' 	=> 'UserController@getUser',
 	'as' 	=> 'login'
@@ -109,6 +114,4 @@ Route::post('transaction/create', [
 	'uses' 	=> 'TransactionController@addTransaction',
 	'as' 	=> 'transaction.create'
 ]);
-
-
 
