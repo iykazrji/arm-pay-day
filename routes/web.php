@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+// Route::get('/', function () {
+// 	return view('welcome');
+// });
+
+Route::get('/', [
+	'uses' 	=> 'PaymentController@payment',
+	'as' 	=> '/'
+]);
 
 Route::post('register', [
 	'uses' 	=> 'UserController@postCreateUserAccount',

@@ -48,7 +48,7 @@ class UserController extends Controller
 
 	public function getUser()
 	{
-		$user = "PIV10002";
+		$user = "PIV100012";
 		return $this->identityManagement->getUserDetail($user);		
 	}
 

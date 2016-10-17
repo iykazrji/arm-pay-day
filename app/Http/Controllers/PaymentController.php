@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Flutterwave\Banks;
+use Flutterwave\Flutterwave;
+
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -21,8 +24,7 @@ class PaymentController extends Controller
 		else 
 		{
 			return $this->payment->addPaymentDetails($request->all());
-		}
-			
+		}	
 	}	
 
 	public function updatePayment(Request $request)
@@ -39,8 +41,7 @@ class PaymentController extends Controller
 		else 
 		{
 			return $this->payment->updatePayment($request->all());
-		}
-			
+		}	
 	}
 
 	public function getPaymentDetail($id)
@@ -53,5 +54,18 @@ class PaymentController extends Controller
 		{
 			return 'you need user id to get the payment details';
 		}
+	}
+
+	public function payment()
+	{
+		$merchantKey = "tk_vpBO9zDon6"; //can be found on flutterwave dev portal
+		$apiKey = "tk_Ajo1pDzHJGFROKigCaTL"; //can be found on flutterwave dev portal
+		$env = "staging"; //this can be production when ready for deployment
+		
+		Flutterwave::setMerchantCredentials($merchantKey, $apiKey, $env);
+		
+		$result = Banks::allBanks();
+
+		dd($result);
 	}
 }

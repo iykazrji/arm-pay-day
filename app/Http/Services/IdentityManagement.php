@@ -95,7 +95,7 @@ class IdentityManagement
 
 	public function updateUser($data)
 	{
-		$data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 		

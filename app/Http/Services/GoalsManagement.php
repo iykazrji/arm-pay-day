@@ -65,7 +65,7 @@ class GoalsManagement
 	public function updateGoal($data)
 	{
 
-		$data = json_encode(json_encode($data));
+		$data = json_encode($data);
 
 		$http = new Client();
 
@@ -123,7 +123,7 @@ class GoalsManagement
 
 		try 
 		{
-			$request = $http->request('POST', 'https://api.arm.com.ng/PaydayInvestot/Goal/Fetch_All_Goals', [
+			$request = $http->request('POST', 'https://api.arm.com.ng/PaydayInvestot/Goal/FetchAllGoals', [
 			   
 			'headers' => [
 				'Accept'  		=> 'application/json',
