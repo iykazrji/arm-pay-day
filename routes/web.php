@@ -16,7 +16,7 @@
 // });
 
 Route::get('/', [
-	'uses' 	=> 'PaymentController@payment',
+	'uses' 	=> 'PaymentController@chargeCard',
 	'as' 	=> '/'
 ]);
 

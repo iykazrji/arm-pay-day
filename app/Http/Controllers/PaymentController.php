@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Flutterwave\Banks;
+use Flutterwave\AccessAccount;
 use Flutterwave\Flutterwave;
 
 use App\Http\Requests;
@@ -67,5 +68,24 @@ class PaymentController extends Controller
 		$result = Banks::allBanks();
 
 		dd($result);
+	}
+
+	public function chargeCard()
+	{
+		$merchantKey = "tk_vpBO9zDon6"; //can be found on flutterwave dev portal
+		$apiKey = "tk_Ajo1pDzHJGFROKigCaTL"; //can be found on flutterwave dev portal
+		$env = "staging"; //this can be production when ready for deployment
+		
+		Flutterwave::setMerchantCredentials($merchantKey, $apiKey, $env);
+		
+		$accountNumber = "0007547095"; //account number you want to charge
+		$result = AccessAccount::initiate($accountNumber);
+		
+		dd($result);
+
+		if ($result->isSuccessfulResponse()) {
+			dd(1);
+		}
+
 	}
 }
