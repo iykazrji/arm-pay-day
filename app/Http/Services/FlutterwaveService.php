@@ -56,6 +56,9 @@ class FlutterwaveService
 		 * This guy is what we will save for recurrent debit later on
 		 */
 		echo "<br>Response Token: ".$data['data']['responsetoken'];
+
+		// new you will save the token for the user
+		$this->saveNewUserToken($data['data']['responsetoken']);
 	}
 
 	public function chargeWithToken($data)
@@ -86,6 +89,14 @@ class FlutterwaveService
 		echo "<br>Reason Phrase: ".$r_r->getReasonPhrase();
 
 		var_dump($r_data);
+	}
+
+
+	public function saveNewUserToken($token)
+	{
+		$user = User::where('user_id', AuthUserData()->UserId)->get();
+		$user->account_id = $token;
+		$user->save();
 	}
 
 }
