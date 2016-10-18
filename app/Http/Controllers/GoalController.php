@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 
 class GoalController extends Controller
 {
-
 
 	public function postCreateGoal(Request $request)
 	{
@@ -22,7 +22,19 @@ class GoalController extends Controller
 		    ];
 		}
 		else 
-		{
+		{	
+			$auth_user_id = AuthUserData()->UserId;
+			$db_user = User::where('user_id', $auth_user_id)->get();
+			
+			if ( $db_user->count() > 0 ) 
+			{
+				return $this->flutterwave->chargeWithToken($db_user->first()->account_id);	
+			}
+			else
+			{
+				return $this->flutterwave->chargeCard($request->all());
+			}
+
 			return $this->goalsManagement->createGoal($request->all());
 		}
 	}

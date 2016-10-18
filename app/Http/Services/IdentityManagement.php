@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use Auth;
+use App\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Guzzle\Http\Exception\ClientErrorResponseException;
@@ -27,6 +28,13 @@ class IdentityManagement
 			   'auth' => ['arm', '@rm1k0y1l@g0s'],
 			   'body' => $data
 			]);
+
+			return json_decode(" ' " .  $request->getBody() . " ' ")->User_id;
+
+			$user = new User;
+			
+			$user->user_id = ''; 
+
 
 			return $request->getBody();
 		} 

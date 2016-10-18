@@ -8,6 +8,7 @@ use GuzzleHttp\Client;
 # Service Namespace  
 use App\Http\Services\Payment;
 use App\Http\Services\GoalsManagement;
+use App\Http\Services\FlutterwaveService;
 use App\Http\Services\IdentityManagement;
 use App\Http\Services\TransactionManagement;
 
@@ -39,9 +40,10 @@ class Controller extends BaseController
         $this->goalsManagementValidation    = new GoalsManagementValidation;
         $this->transactionValidation 	= new TransactionValidation;
 
-        $this->payment 		  = new Payment;
-        $this->goalsManagement 	   = new GoalsManagement;
-        $this->identityManagement         = new IdentityManagement;
-        $this->transactionManagement   = new TransactionManagement;
+        $this->payment 		       = new Payment;
+        $this->flutterwave         = new FlutterwaveService;
+        $this->goalsManagement     = new GoalsManagement;
+        $this->identityManagement       = new IdentityManagement;
+        $this->transactionManagement    = new TransactionManagement;
     }
 }
