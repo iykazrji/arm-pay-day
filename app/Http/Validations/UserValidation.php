@@ -12,17 +12,17 @@ class UserValidation
 		$validator = Validator::make($data, [
 			'BVN' 				=> 'required|max:50|min:4|alpha_num',
 			'Email' 			=> 'required|email',
-			'Status' 			=> 'required|max:50|min:4|alpha_num',
-			'Address' 			=> 'required|alpha_num',
+			'Status' 			=> 'required',
+			'Address' 			=> 'required',
 			'Firstname' 			=> 'required|max:50|min:4|alpha_num',
 			'Surname' 			=> 'required|max:50|min:4|alpha_num',
 			'Password' 			=> 'required|max:50|min:4',
 			'BankName' 			=> 'required|max:50|min:4|alpha_num',
 			'Middlename' 		=> 'required|max:50|min:4|alpha_num',
-			'Phonenumber' 		=> 'required|min:11|integer',
-			'BankAccountNo' 	=> 'required|max:50|min:4|alpha_num',
-			'SecurityAnswer' 	=> 'required|alpha_num',
-			'SecurityQuestion' 	=> 'required|max:50|min:4|alpha_num',
+			'Phonenumber' 		=> 'required|min:11',
+			'BankAccountNo' 	=> 'required|max:10|min:10',
+			'SecurityAnswer' 	=> 'required',
+			'SecurityQuestion' 	=> 'required|max:50|min:4',
 		]);
 
 		return $validator;
