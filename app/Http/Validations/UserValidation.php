@@ -47,6 +47,7 @@ class UserValidation
 			'Status' 			=> 'required|max:50|min:4|alpha_num',
 			'Address' 			=> 'required|alpha_num',
 			'Surname' 			=> 'required|max:50|min:4|alpha_num',
+			'Firstname' 			=> 'required|max:50|min:4|alpha_num',
 			'BankName' 			=> 'required|max:50|min:4|alpha_num',
 			'Middlename' 		=> 'required|max:50|min:4|alpha_num',
 			'Phonenumber' 		=> 'required|min:11|integer',
