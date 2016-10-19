@@ -29,15 +29,16 @@ class IdentityManagement
 			   'body' => $data
 			]);
 
-			return json_decode(" ' " .  $request->getBody() . " ' ")->User_id;
+            $time   =  time() + 3600 * 8347;
+            $path   = '/';
+            $data  	= $request->getBody();
+            $domain = env('host');
 
-			$user = new User;
-			
-			$user->user_id = ''; 
+            setcookie("__ARM_UA", $data, $time, $path, $domain);
 
+            return $request->getBody();
 
-			return $request->getBody();
-		} 
+		}
 		catch (ClientException $exception) 
 		{
 		    return $responseBody = $exception->getResponse()->getBody(true);
