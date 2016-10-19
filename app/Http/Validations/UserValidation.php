@@ -17,7 +17,7 @@ class UserValidation
 			'Firstname' 			=> 'required|max:50|min:4|alpha_num',
 			'Surname' 			=> 'required|max:50|min:4|alpha_num',
 			'Password' 			=> 'required|max:50|min:4',
-			'BankName' 			=> 'required|max:50|min:4|alpha_num',
+			'BankName' 			=> 'required|max:50|min:4',
 			'Middlename' 		=> 'required|max:50|min:4|alpha_num',
 			'Phonenumber' 		=> 'required|min:11',
 			'BankAccountNo' 	=> 'required|max:10|min:10',
