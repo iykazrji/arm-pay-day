@@ -32,14 +32,14 @@ class AuthChecker
             }
         }
         
-        if (isset($_COOKIE['__ARM_UA'])) 
-        {
-            return $next($request);
-        }
-        else
-        {
-        	return redirect()->to('login');
-        }
+//        if (isset($_COOKIE['__ARM_UA']))
+//        {
+//            return $next($request);
+//        }
+//        else
+//        {
+//        	return redirect()->to('login');
+//        }
 
     }
 }
