@@ -37,7 +37,7 @@ Route::get('login', [
 
 Route::get('user/{userId}', [
 	'uses' 	=> 'UserController@getUser',
-	'as' 	=> 'login'
+	'as' 	=> 'user.fetch'
 ]);
 
 Route::post('user/update', [
