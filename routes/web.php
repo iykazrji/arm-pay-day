@@ -35,7 +35,7 @@ Route::get('login', [
 	'as' 	=> 'login'
 ]);
 
-Route::get('user', [
+Route::get('user/{userId}', [
 	'uses' 	=> 'UserController@getUser',
 	'as' 	=> 'login'
 ]);
