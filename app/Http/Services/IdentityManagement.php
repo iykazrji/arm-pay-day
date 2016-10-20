@@ -77,8 +77,9 @@ class IdentityManagement
 		}
 	}
 
-	public function getUserDetail($userId)
+	public function getUserDetail($data)
 	{
+	    $data = json_encode($data);
 		$http = new Client();
 		
 		try 
@@ -89,7 +90,7 @@ class IdentityManagement
 			       'Content-Type'  	=> 'application/json',
 			   	],
 			   'auth' => ['arm', '@rm1k0y1l@g0s'],
-			   'body' => $userId
+			   'body' => $data
 			]);
 			
 			return $request->getBody();
