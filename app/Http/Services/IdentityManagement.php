@@ -36,7 +36,7 @@ class IdentityManagement
 
             setcookie("__ARM_UA", $data, $time, $path, $domain);
 
-            return $request->getBody();
+            $request->getBody();
 
 		}
 		catch (ClientException $exception) 
@@ -79,7 +79,7 @@ class IdentityManagement
 
 	public function getUserDetail($data)
 	{
-		$data = json_encode($data);
+		$userId = $data['userId'];
 
 		$http = new Client();
 		
@@ -91,7 +91,7 @@ class IdentityManagement
 			       'Content-Type'  	=> 'application/json',
 			   	],
 			   'auth' => ['arm', '@rm1k0y1l@g0s'],
-			   'body' => $data
+			   'body' => $userId
 			]);
 			
 			return $request->getBody();
