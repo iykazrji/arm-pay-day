@@ -48,7 +48,7 @@ class UserController extends Controller
 
 	public function getUser(Request $request)
 	{
-		return $this->identityManagement->getUserDetail($request->all());
+		return $this->identityManagement->getUserDetail($request->input('userId'));
 	}
 
 	public function postUpdateUser(Request $request)

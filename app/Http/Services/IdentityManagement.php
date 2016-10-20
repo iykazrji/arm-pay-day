@@ -77,10 +77,8 @@ class IdentityManagement
 		}
 	}
 
-	public function getUserDetail($data)
+	public function getUserDetail($userId)
 	{
-		$userId = $data['userId'];
-
 		$http = new Client();
 		
 		try 
