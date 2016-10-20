@@ -31,6 +31,8 @@ class AuthChecker
                 return $next($request);
             }
         }
+
+        return $next($request);
         
 //        if (isset($_COOKIE['__ARM_UA']))
 //        {
