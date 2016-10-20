@@ -46,10 +46,9 @@ class UserController extends Controller
 		}
 	}
 
-	public function getUser()
+	public function getUser(Request $request)
 	{
-		$user = "PIV100012";
-		return $this->identityManagement->getUserDetail($user);		
+		return $this->identityManagement->getUserDetail($request->all());
 	}
 
 	public function postUpdateUser(Request $request)
