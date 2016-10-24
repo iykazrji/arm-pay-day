@@ -36,7 +36,7 @@ class IdentityManagement
 
             setcookie("__ARM_UA", $data, $time, $path, $domain);
 
-            $request->getBody();
+            return $request->getBody();
 
 		}
 		catch (ClientException $exception) 
