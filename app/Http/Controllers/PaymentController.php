@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-
-
-
 class PaymentController extends Controller
 {
 	public function postAddPaymentDetails(Request $request)
@@ -58,7 +55,7 @@ class PaymentController extends Controller
 
 	public function payment()
 	{
-		return $this->flutterwave->FunctionName();
+		// return $this->flutterwave->FunctionName();
 	}
 
 }

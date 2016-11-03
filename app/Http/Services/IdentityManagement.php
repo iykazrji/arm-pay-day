@@ -69,11 +69,19 @@ class IdentityManagement
 
 			setcookie("__ARM_UA", $data, $time, $path, $domain);	
 			
-			return $request->getBody();
+			return [
+				"status" => 200,
+				"data" 	=> json_decode($request->getBody(), true)
+			];
 		} 
 		catch (ClientException $exception) 
 		{
-		    return $getResponseeBody = $exception->getResponse()->getBody(true);
+		    $message =  (string) $exception->getResponse()->getBody(true);
+		
+		    return [
+		    	"status" => 501,
+		    	"message" => $message
+		    ];
 		}
 	}
 
