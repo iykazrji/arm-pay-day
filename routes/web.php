@@ -11,18 +11,14 @@
 |
 */
 
-// Route::get('/', function () {
-// 	return view('welcome');
-// });
-
 Route::get('/', [
-	'uses' 	=> 'PaymentController@payment',
+	'uses' 	=> 'PageController@getDashboardPage',
 	'as' 	=> '/'
 ]);
 
-Route::post('register', [
-	'uses' 	=> 'UserController@postCreateUserAccount',
-	'as' 	=> 'register'
+Route::get('login', [
+	'uses' 	=> 'PageController@getLoginPage',
+	'as' 	=> 'login'
 ]);
 
 Route::post('login', [
@@ -30,9 +26,14 @@ Route::post('login', [
 	'as' 	=> 'login'
 ]);
 
-Route::get('login', [
-	'uses' 	=> 'UserController@postLoginUser',
-	'as' 	=> 'login'
+Route::get('register', [
+	'uses' 	=> 'PageController@getRegisterPage',
+	'as' 	=> 'register'
+]);
+
+Route::post('register', [
+	'uses' 	=> 'UserController@postCreateUserAccount',
+	'as' 	=> 'register'
 ]);
 
 Route::get('user/{userId}', [
