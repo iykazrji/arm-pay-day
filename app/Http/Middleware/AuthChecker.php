@@ -19,7 +19,7 @@ class AuthChecker
         $pass_routes_with_out_auth = [
             "login",
             "register"
-        ];
+        ];  
 
         /*======================================================================
         | Check if {$request->path()} is part of the pass_routes_with_out_token
@@ -31,17 +31,15 @@ class AuthChecker
                 return $next($request);
             }
         }
-
-        return $next($request);
         
-//        if (isset($_COOKIE['__ARM_UA']))
-//        {
-//            return $next($request);
-//        }
-//        else
-//        {
-//        	return redirect()->to('login');
-//        }
+       if (isset($_COOKIE['__ARM_UA']))
+       {
+           return $next($request);
+       }
+       else
+       {
+       	return redirect()->to('login');
+       }
 
     }
 }

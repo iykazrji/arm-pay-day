@@ -5,6 +5,6 @@
 
 @section('content')
 
-	dashboard page
+	register
 
 @endsection

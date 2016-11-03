@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
 
-	public function __construct()
-	{
-	    $this->middleware('auth')->except(['getLoginPage', 'getRegisterPage']);
-	}
+	// public function __construct()
+	// {
+	//     $this->middleware('auth')->except(['getLoginPage', 'getRegisterPage']);
+	// }
 
 	public function getDashboardPage()
 	{

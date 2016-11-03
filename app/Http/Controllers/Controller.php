@@ -35,10 +35,10 @@ class Controller extends BaseController
 
     function __construct()
     {
-        $this->userValidation 			= new UserValidation;
-        $this->paymentValidation 		= new PaymentValidation;
+        $this->userValidation 			    = new UserValidation;
+        $this->paymentValidation 		    = new PaymentValidation;
+        $this->transactionValidation        = new TransactionValidation;
         $this->goalsManagementValidation    = new GoalsManagementValidation;
-        $this->transactionValidation 	= new TransactionValidation;
 
         $this->payment 		       = new Payment;
         $this->flutterwave         = new FlutterwaveService;

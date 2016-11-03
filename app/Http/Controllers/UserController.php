@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+	public function getUser($userId)
+	{
+	    return $this->identityManagement->getUserDetail($userId);
+	}
+
 	public function postCreateUserAccount(Request $request)
 	{
 
@@ -30,7 +35,6 @@ class UserController extends Controller
 
 	public function postLoginUser(Request $request)
 	{
-
 		$validator = $this->userValidation->loginUserValidation($request->all());
 
 		if ($validator->fails())
@@ -44,11 +48,6 @@ class UserController extends Controller
 		{
 			return $this->identityManagement->loginUserService($request->all());		
 		}
-	}
-
-	public function getUser($userId)
-	{
-	    return $this->identityManagement->getUserDetail($userId);
 	}
 
 	public function postUpdateUser(Request $request)
@@ -68,4 +67,5 @@ class UserController extends Controller
 			return $this->identityManagement->updateUser($request->all());		
 		}
 	}
+
 }
