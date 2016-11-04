@@ -7,7 +7,8 @@
 		<title>ARM | @yield('title')</title>
 		<link rel="stylesheet" href="{{asset('assets/styles/bootstrap/bootstrap.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/styles/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/styles/responsify.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/styles/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/styles/dashboard_styles.css')}}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Exo+2|Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo+2:200" rel="stylesheet">
   </head>

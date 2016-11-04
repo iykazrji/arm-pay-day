@@ -29,7 +29,7 @@
                 <img src="{{ asset('assets/images/playstore_icon.png') }}">
               </div>
               <div class="col-xs-6 app-store-icon">
-                <img src="{{ asset('assets/images/appstore_icon.png') }}">
+                <img src="{{ asset('assets/images/appstore_icon.png'")>
               </div>  
             </div>
           </div>

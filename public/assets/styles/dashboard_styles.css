@@ -1,0 +1,34 @@
+#main-dashboard-container{
+	background-image: url('../images/dashboard-background-image.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: auto;
+	min-height: 100vh;
+	display: block;
+	width: 100%;
+	padding: 0px;
+	font-family: 'Montserrat';
+	font-weight: 200;
+	color: #ffffff;
+}
+#main-dashboard-container #header-navigation{
+	background-color: rgba(0,0,0,0);
+	border: none;
+	height: 60px;
+}
+#main-dashboard-container #header-navigation .menu-holder{
+	display: flex;
+	align-items: center;
+	margin-left: 3%;
+}
+#main-dashboard-container #header-navigation .menu-holder .hamburger-menu-holder{
+	height: 25px;
+}
+#main-dashboard-container #header-navigation #welcome-name-dropdown{
+	float: right;
+	margin-right: 30px;
+	padding-top: 20px;
+		/* margin-top: 20px; */
+	align-items: center;
+}
