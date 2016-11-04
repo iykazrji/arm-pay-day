@@ -27,4 +27,8 @@ class PageController extends Controller
 	{
 		return view('pages.register');
 	}
+	public function getProductPage()
+	{
+		return view('pages.product_page');
+	}
 }

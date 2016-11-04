@@ -1,0 +1,480 @@
+/*---- General Styles -----*/
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Light.eot');
+	src: url('fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Light.woff') format('woff'),
+		url('fonts/Montserrat-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Thin.eot');
+	src: url('fonts/Montserrat-Thin.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Thin.woff') format('woff'),
+		url('fonts/Montserrat-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Medium.eot');
+	src: url('fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Medium.woff') format('woff'),
+		url('fonts/Montserrat-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Black.eot');
+	src: url('fonts/Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Black.woff') format('woff'),
+		url('fonts/Montserrat-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Regular.eot');
+	src: url('fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Regular.woff') format('woff'),
+		url('fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Bold.eot');
+	src: url('fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Bold.woff') format('woff'),
+		url('fonts/Montserrat-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraLight.eot');
+	src: url('fonts/Montserrat-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-ExtraLight.woff') format('woff'),
+		url('fonts/Montserrat-ExtraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-ExtraBold.eot');
+	src: url('fonts/Montserrat-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-ExtraBold.woff') format('woff'),
+		url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-SemiBold.eot');
+	src: url('fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+*{
+	-webkit-backface-visibility: hidden;
+}
+*:after, *:before { box-sizing:border-box;
+					 -webkit-box-sizing:border-box; 
+					 -moz-box-sizing:border-box; 
+					-webkit-font-smoothing:antialiased; 
+					font-smoothing:antialiased; 
+					text-rendering:optimizeLegibility; 
+			}
+body{
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 900;
+	background-color: #372d45;
+}
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+}
+/*---- Header Styles ----*/
+header div{
+	height: 100%;
+	float: left;
+}
+header .header-main-container, header .navbar-header{
+	width: 100%;
+}
+header .navbar-fixed-top{
+
+}
+header #main-navigation{
+	height: 80px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 3px rgba(30, 30, 30, 0.05);
+	position: fixed;
+	top: 0;
+	z-index: 100;
+} 
+header .navbar-brand{
+	height: 100%;
+	margin-left: 20px !important;
+	padding: 10px;
+}
+header #login-button-holder{
+	right: 50px;
+	float: right;
+	position: relative;
+}
+header #login-button-holder a{
+	border: 2px solid;
+	padding: 7px;
+	font-size: 12px;
+	margin-top: 20px;
+	vertical-align: center;
+	justify-content: center;
+	display: flex;
+	color: #372d45;
+	flex-direction: row;
+	width: 90px;
+	height: 32px;
+	border-radius: 15px;
+	text-align: center;
+}
+header #login-button-holder a .img-holder{
+	background-image: url('../images/padlock27.png');
+	flex: 1;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+header #login-button-holder a span{
+	text-align: center;
+	letter-spacing: 1px;
+	flex: 2;
+	font-weight: 900;
+	margin-top: -2px;
+}
+
+.section-1{
+	height: auto;
+	position: relative;
+	float: none;
+	margin-top: -100px;
+	padding: 0px;
+}
+.section-1 .trapezoid{
+	/* height: 1000px; */
+	width: 100%;
+	background-color: #fcfbfe;
+	/* transform: skewY(-8deg); */
+	transform-origin: 0% 70%;
+	overflow: hidden;
+	text-rendering: optimizeLegibility;
+	 /* transform: translateZ(0); */
+}
+.section-1 .trapezoid-content{
+	/* transform:  translateY(0) skewY(8deg); */
+}
+.section-1 .trapezoid-content .top-div{
+	margin-top: 200px;
+	padding: 30px;
+	padding-bottom: 80px;
+	overflow: hidden;
+}
+.section-1 .trapezoid-content .top-div h2{
+	font-size: 350%;
+	text-align: center;
+	font-weight: 200;
+	letter-spacing: 15px;
+	color: #372d45;
+	text-transform: uppercase;
+}
+.section-1 .trapezoid-content .top-div p{
+	text-align: center;
+	width: 70%;
+	display: block;
+	margin-top: 30px;
+	font-weight: 200;
+}
+.section-1 .trapezoid-content .top-div .icons-holder{
+	height: 50px;
+	margin-top: 30px;
+}
+.section-1 .trapezoid-content .top-div .icons-holder div{
+	height: 100%;
+}
+.section-1 .trapezoid-content .top-div .icons-holder .play-store-icon{
+	text-align: right;
+}
+.section-1 .trapezoid-content .bottom-div{
+	 filter: none; 
+	-webkit-filter: blur(0px); 
+	-moz-filter: blur(0px); 
+	-ms-filter: blur(0px);
+	 filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+	background-repeat: no-repeat;
+	background-size: contain;
+	/* transform: scale(1.2, 1.2); */
+	background-position: center;
+	-webkit-backface-visibility: hidden;
+	image-rendering: -webkit-optimize-contrast;
+}
+.section-2{
+	color: #ffffff;
+	background-image: url('../images/background_section_2.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: -30px;
+	padding-left: 10%;
+	padding-top: 60px;
+	padding-right: 10%;
+	padding-bottom: 60px;
+}
+.section-2 #about-app-txt{
+	padding-top: 150px;
+	font-weight: 400;
+	padding-bottom: 100px;
+}
+.section-2 #about-app-txt .section-2 #about-app-txt{
+	padding-top: 30px;
+}
+.section-2 .section-title{
+	text-align: center;
+	margin-bottom: 40px;
+}
+#about-app-content{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+}
+#about-app-content .about-app-conent-child{
+	justify-content: center;
+	vertical-align: center;
+}
+#about-app-content .about-app-conent-child .about-app-img{
+	height: 500px;
+	text-align: center;
+}
+#about-app-content .about-app-conent-child .about-app-img img{
+	margin: 0 auto;
+}
+#about-app-content .about-app-conent-child .about-app-img .indicator{
+	position: absolute;
+	width: 40%;
+	margin-top: 50px;
+	margin-left: -15px;
+
+}
+footer{
+	background-color: #f9f9f9;
+	height: 150px;
+}
+
+/*--- Login Page ---*/
+.login-main-container, .register-main-container{
+	font-family: 'Montserrat';
+	font-weight: 200;
+	width: 100%;
+	min-height: 100%;
+	padding-bottom: 30px;
+	position: absolute;
+	top: 0;
+	background-image: url('../images/login_page_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #ffffff;
+}
+.register-form-container{
+	margin-top: 30px;
+}
+.login-main-container header, .register-main-container header{
+	height: 100px;
+	color: #ffffff;
+	overflow: hidden;
+	padding-top: 30px;
+}
+#logo-icon-holder{
+	margin-left: 50px;
+}
+#help-icon-holder{
+	display: flex;
+	flex-direction: row;
+	height: 60px;
+	font-weight: 400;
+	align-items: center;
+	float: right;
+	font-size: 12px;
+	margin-right: 20px;
+}
+
+.login-main-container .login-form-container{
+	width: 50%;
+	margin-top: 80px;	
+}
+.login-main-container .login-form-container .form-holder{
+	overflow: hidden;
+	width: 50%;
+}
+.login-main-container .login-form-container .welcome-text, .register-main-container .register-form-container .welcome-text{
+	font-size: 26px;
+	padding: 15px;
+	margin-top: 10px;
+}
+.login-main-container .login-form-container .logo-holder, .register-main-container .register-form-container .logo-holder{
+	width: 30%;
+	height: 80px;
+}
+.login-main-container .login-form-container .form-field-holder, .register-main-container .register-form-container .form-field-holder{
+	height: 45px;
+	background-color: rgba(250, 250, 250, 0.05);
+}
+.login-main-container .login-form-container .form-field-holder .form-icon-holder, .register-main-container .register-form-container .form-field-holder .form-icon-holder{
+	height: 100%;
+	transform: scale(0.4, 0.4);
+}
+#username-icon-holder, #password-icon-holder, #gender-icon-holder, #age-icon-holder{
+	background-image: url('../images/user_icon.png');
+	background-position: center;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#password-icon-holder{
+	background-image: url('../images/padlock_white.png');
+}
+#gender-icon-holder{
+	background-image: url('../images/male-and-female.png');
+}
+#age-icon-holder{
+	background-image: url('../images/calendar.png');
+}
+.login-main-container .login-form-container .form-field-holder .text-field, #register-form-holder .form-field-holder .text-field{
+	height: 100%;
+	padding: 0px;
+}
+.login-main-container .login-form-container .form-field-holder .text-field	 input, .register-main-container .register-form-container .form-field-holder .text-field	 input{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	outline: none;
+	border: none;
+	border-left: 1px solid rgba(250, 250, 250, 0.08);
+	background-color: rgba(0,0,0,0);
+}
+.register-main-container .register-form-container .form-field-holder .text-field select{
+	width: 100%;
+	background-color: rgba(0,0,0,0);
+	padding: 10px;
+	height: 100%;
+	border: none;
+	outline: none;
+	border-left: 1px solid rgba(250, 250, 250, 0.08);
+}
+.login-main-container .login-form-container span, .register-main-container .register-form-container span{
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+.login-main-container .login-form-container .submit-button-holder button, .register-main-container .register-form-container .submit-button-holder button{
+	background-color: rgba(0,0,0,0);
+	font-size: 12px;
+	border: 1px solid;
+	border-radius: 20px;
+	padding: 7px;
+	width: 130px;
+	margin-top: 50px;
+
+}
+.register-main-container .register-form-container .submit-button-holder button{
+	width: 100%;
+	padding: 12px;
+	margin-top: 10px;
+}
+.login-main-container .login-form-container .register-here-link{
+	text-decoration: underline;
+	margin-top: 40px;
+	display: block;
+}
+/*--- Register Form Container ---*/
+.register-form-container .two-forms-holder{
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+.register-form-container .two-forms-holder .select-image{
+	text-align: center
+}
+.register-form-container .two-forms-holder .select-image .upload-button-holder{
+	height: 300px;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	position: relative;
+	background-color: #ffffff;
+}
+.register-form-container .two-forms-holder .select-image .upload-button-holder span{
+	color: #372d45;
+	font-size: 70px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	font-weight: 400;
+	padding-top: 20px;
+}
+.register-form-container .two-forms-holder .select-image .upload-button-holder input.upload-button{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+
+}
+.register-form-container #gender-select-holder, .register-form-container #age-select-holder{
+	padding: 0px;
+	text-align: left;
+}
+.register-form-container #gender-select-holder{
+	padding-right: 10px;
+}
+.register-form-container #age-select-holder{
+	padding-left: 10px;
+}
+.register-form-container .terms-link{
+	text-decoration: underline;
+}

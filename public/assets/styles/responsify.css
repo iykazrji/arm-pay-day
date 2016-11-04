@@ -1,0 +1,8 @@
+@media (max-width: 1200px){
+	#about-app-content{
+		flex-direction: column;	
+	}
+	.section-2 #about-app-txt{
+		padding-top: 50px;
+	}
+}

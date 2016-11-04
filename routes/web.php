@@ -16,6 +16,10 @@ Route::get('/', [
 	'as' 	=> '/'
 ]);
 
+Route::get('product-page', [
+	'uses'	=> 'PageController@getProductPage',
+	'as'	=> 'product-page'
+	]);
 Route::get('login', [
 	'uses' 	=> 'PageController@getLoginPage',
 	'as' 	=> 'login'
